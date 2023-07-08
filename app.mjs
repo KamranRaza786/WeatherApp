@@ -1,6 +1,6 @@
 const getWeatherData = async () => {
     const BASE_URL = "https://api.weatherapi.com";
-    const KEY = `difj3j38r8f8383r8fe8u3r83ur0efu38ru`;
+    const KEY = `38a9ab72fa4044218e075627230807`;
     const city = "lahore";
     const temp = document.querySelector("#temp");
     const img = document.querySelector("#img");
