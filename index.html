@@ -1,47 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<div class="card">
-    <div class="search">
-        <input type="text" placeholder="enter city name" 
-        spellcheck="false">
-        <button><img src="img/search.png"></button>
+  <div class="container">
+    <div class="weather--header">
+      <form class="weather--search">
+        <input type="text" placeholder="Serch for a city" class="weather--searchform">
+        <i class="fa-regular fa-magnifying-glass fa-fade"></i>">
+      </form>
+      <div class="weather--units">
+        <span class="weather--unit-celsius">&#176C</span>
+        <span class="weather--unit-farenheit">&#176F</span>
+      </div>
     </div>
-    <div class="error">
-        <p>Invalid city name</p>
-    </div>
-    <div class="weather">
-        <img src="img/rain.png" class="weather-icon">
-        <h1 class="temp">22°c</h1>
-        <h2 class="city">New York</h2>
-<div class="details">
-    <div class="col">
-        <img src="img/humidity.png">
-        <div>
-            <p class="humidity">50%</p>
-            <p>Humidity</p></div>
-        </div>
-            <div class="col">
-                <img src="img/wind.png">
-                <div>
-                    <p class="wind">15 km/h</p>
-                    <p>Wind Speed</p> 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-<script type="module" src="./weather.js"></script>
-            
-
-</div>
+  </div>
+  <div class="weather--"></div>
+  <script src="https://kit.fontawesome.com/4ed9434050.js" crossorigin="anonymous"></script>
 </body>
 </html>
