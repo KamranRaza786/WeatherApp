@@ -19,6 +19,7 @@ try {
   console.log("response", response);
 
   cityName.innerHTML = `Weather of ${city}`;
+  fetch("https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=" +city, options)
   min_temp.innerHTML = data.min_temp;
   max_temp.innerHTML = data.max_temp;
   wind_degrees.innerHTML = data.wind_degrees;
@@ -46,3 +47,5 @@ submit.addEventListener("click", (e) => {
 });
 
 getWeather("karachi");
+
+
