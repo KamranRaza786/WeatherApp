@@ -1,51 +1,31 @@
-import axios from 'node_modulesaxioslibaxios.js';
+async function checkWeather(city) {
+	const key = "38a9ab72fa4044218e075627230807";
+	const url = "https://api.weatherapi.com/v1/current.json?key=${api_key}&q=${city}&aqi=no";
+	
+  const temp = document.querySelector("#temp");
+  const img = document.querySelector("#img");
 
-const getWeather = async (city) => {
-  console.log("city", city);
-const options = {
-  method: 'GET',
-  url: 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather',
-  params: {city: 'Seattle'},
-  headers: {
-    'X-RapidAPI-Key': '353a974ae7msh7ede14095bb7392p14cd1ejsnb21da3c72da6',
-    'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
-  }
-};
+	const weather_data = await fetch(`${url}`)
+		.then(Response => Response.json());
 
-try {
-  const response = await axios(options);
-  const data = response.data;
+	temperature.innerHTML = `${weather_data.current.temp_c}`;
 
-  console.log("response", response);
-
-  cityName.innerHTML = `Weather of ${city}`;
-  fetch("https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=" +city, options)
-  min_temp.innerHTML = data.min_temp;
-  max_temp.innerHTML = data.max_temp;
-  wind_degrees.innerHTML = data.wind_degrees;
-  wind_degrees2.innerHTML = data.wind_degrees;
-  humidity2.innerHTML = data.humidity;
-  humidity.innerHTML = data.humidity;
-  cloud_pct.innerHTML = data.cloud_pct;
-  feels_like.innerHTML = data.feels_like;
-  temp.innerHTML = data.temp;
-  temp2.innerHTML = data.temp;
-  wind_speed.innerHTML = data.wind_speed;
-} catch (err) {
-
-  console.log("err", err);
-  console.log("err", err.response.data.error.message);
-  // Showing error in UI
-  temp.textContent = err.response.data.error.message;
+	
 }
-};
+const getWeatherData = () => {
+	const res = axios
+	  .get(`${BASE_URL}/v1/current.json?key=${key}&q=${city}&aqi=no`)
+	  .then((res) => console.log("res", res))
+	  .catch((err) => console.log("err", err));
+  };
+searchBtn.addEventListener(`click`, () => {
+	checkWeather();
+})
 
-submit.addEventListener("click", (e) => {
- e.preventDefault();
- const city = document.querySelector("#city").value;
- getWeather(city);
-});
+//} catch (err) {
 
-getWeather("karachi");
-
-
+   // console.log("err", err);
+   // console.log("err", err.response.data.error.message);
+    // Showing error in UI
+   // temp.textContent = err.response.data.error.message;
+ // }
