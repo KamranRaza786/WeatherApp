@@ -47,87 +47,67 @@
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <input id="city1" class="form-control me-2" type="search" placeholder="Your City" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" id="su">Search</button>
         </form>
       </div>
     </div>
   </nav>
-
-  <div class="container-fluid">
-    <section class="py-5 text-center container">
-      <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">Wheather Updates</h1>
-          <p class="lead text-body-secondary">
-            Get the latest weather data for any region in the world.</p>
-          <p>
-          <h6>This App provides the latest weather information for any city or geographic location.</h6>
-          </p>
-          <form class="d-flex" role="search">
-            <input id="city" class="form-control me-2" type="search" placeholder="Type your city name and check the wheather...."
-              aria-label="Search">
-            <button class="btn btn-outline-success" type="submit" id="su">Search</button>
-          </form>
-          <p>
-            <a href="#" class="btn btn-primary my-2">Traveling Advice</a>
-            <a href="#" class="btn btn-secondary my-2">Health Advice</a>
-          </p>
-        </div>
-      </div>
-    </section>
-  </div>
   <div class="container">
+    <p class="my-4 text-center">
+      Get the latest weather data for any region in the world.<br>This App provides the latest weather information for
+      any city or geographic location.
+    </p>
+    <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
     <main>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Karachi</h4>
+              <h4 class="my-0 fw-normal">Tempratures</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
+              <img src="./img/temp2.png" alt="">
+              <h1 class="card-title pricing-card-title">27 <small class="text-body-secondary fw-light"><sup>&deg;</sup>C</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>Cloud_pct is <span id="Cloud_pct"></span></li>
-                <li>temp is <span id="temp"></span></li>
-                <li>feels_like is <span id="feels_like"></span></li>
-                <li>humidity is <span id="humidity"></span></li>
+                <li>City temp is <span id="temp"></span></li>
+                <li>min temp is <span id="min_temp"></span></li>
+                <li>max temp is <span id="max_temp"></span></li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Lahore</h4>
+              <h4 class="my-0 fw-normal">Humidity</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+              <img src="./img/sun.jpg" alt="">
+              <h1 class="card-title pricing-card-title">29 <small class="text-body-secondary fw-light">%</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>min_temp is <span id="min_temp"></span></li>
-                <li>max_temp is <span id="max_temp"></span></li>
-                <li>wind_speed is <span id="wind_speed"></span></li>
-                <li>wind_degrees is <span id="wind_degrees"></span></li>
+                <li>Cloud pct is <span id="Cloud_pct"></span></li>
+                <li>Feels like is <span id="feels_like"></span></li>
+                <li>Humidity is <span id="humidity"></span></li>
+                <li>Cloud pct is <span id="Cloud_pct"></span></li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm border-primary">
             <div class="card-header py-3 text-bg-primary border-primary">
-              <h4 class="my-0 fw-normal">Islamabad</h4>
+              <h4 class="my-0 fw-normal">Wind info</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+              <img src="./img/wind2.jpg" alt="">
+              <h1 class="card-title pricing-card-title">42.0<small class="text-body-secondary fw-light">km/hr</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>sunrise is <span id="sunrise"></span></li>
-                <li>sunset is <span id="sunset"></span></li>
-                <li>Cloud_pct is <span id=""></span></li>
-                <li>Cloud_pct is <span id=""></span></li>
+                <li>Sunrise is <span id="sunrise"></span></li>
+                <li>Sunset is <span id="sunset"></span></li>
+                <li>Wind speed is <span id="wind_speed"></span></li>
+                <li>Wind degrees is <span id="wind_degrees"></span></li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
             </div>
           </div>
         </div>
