@@ -1,47 +1,48 @@
-const apikey = "a8b18125b63f75b7edb90430d2e108a0";
-const apiurl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+import axios from 'node_modulesaxioslibaxios.js';
 
-const searchBox = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
-const weathericon = document.querySelector(".weather-icon");
+const getWeather = async (city) => {
+  console.log("city", city);
+const options = {
+  method: 'GET',
+  url: 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather',
+  params: {city: 'Seattle'},
+  headers: {
+    'X-RapidAPI-Key': '353a974ae7msh7ede14095bb7392p14cd1ejsnb21da3c72da6',
+    'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+  }
+};
 
-async function checkweather(city) {
-    const response = await fetch(apiurl + city + "&appid=" + apikey);
+try {
+  const response = await axios(options);
+  const data = response.data;
 
-    if (response.status == 404) {
-        document.querySelector(".error").style.display = "block";
-        document.querySelector(".weather").style.display = "none";
-    } else {
-        let data = await response.json();
+  console.log("response", response);
 
-        document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-        document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+  cityName.innerHTML = `Weather of ${city}`;
+  min_temp.innerHTML = data.min_temp;
+  max_temp.innerHTML = data.max_temp;
+  wind_degrees.innerHTML = data.wind_degrees;
+  wind_degrees2.innerHTML = data.wind_degrees;
+  humidity2.innerHTML = data.humidity;
+  humidity.innerHTML = data.humidity;
+  cloud_pct.innerHTML = data.cloud_pct;
+  feels_like.innerHTML = data.feels_like;
+  temp.innerHTML = data.temp;
+  temp2.innerHTML = data.temp;
+  wind_speed.innerHTML = data.wind_speed;
+} catch (err) {
 
-        if (data.weather[0].main === "Clouds") {
-            weathericon.src = "images/clouds.png";
-        } else if (data.weather[0].main === "Clear") {
-            weathericon.src = "images/clear.png";
-        } else if (data.weather[0].main === "Rain") {
-            weathericon.src = "images/rain.png";
-        } else if (data.weather[0].main === "Drizzle") {
-            weathericon.src = "images/drizzle.png";
-        } else if (data.weather[0].main === "Mist") {
-            weathericon.src = "images/mist.png";
-        }
-        document.querySelector(".weather").style.display = "block";
-        document.querySelector(".error").style.display = "none";
-    }
+  console.log("err", err);
+  console.log("err", err.response.data.error.message);
+  // Showing error in UI
+  temp.textContent = err.response.data.error.message;
 }
+};
 
-searchBtn.addEventListener("click", () => {
-    checkweather(searchBox.value);
+submit.addEventListener("click", (e) => {
+ e.preventDefault();
+ const city = document.querySelector("#city").value;
+ getWeather(city);
 });
 
-
-
-
-
-
-
+getWeather("karachi");
