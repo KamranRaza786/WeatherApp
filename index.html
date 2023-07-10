@@ -46,10 +46,10 @@
             <a class="nav-link disabled">Follow for more App @ S.M Kamran Raza</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
+        <div class="d-flex" role="search">
           <input id="city1" class="form-control me-2" type="search" placeholder="Your City" aria-label="Search">
           <button class="btn btn-outline-success" type="submit" id="searchBtn">Search</button>
-        </form>
+        </div>
       </div>
     </div>
   </nav>
@@ -68,8 +68,8 @@
             </div>
             <div class="card-body">
               <img src="./img/temp2.png" alt="">
-              <h1 class="card-title pricing-card-title">27 <small
-                  class="text-body-secondary fw-light"><sup>&deg;</sup>C</small></h1>
+              <h1 class="card-title pricing-card-title" id="temp_main">27<small
+                class="text-body-secondary fw-light"><sup>&deg;</sup>C</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
                 <li>City temp is <span id="temp"></span></li>
                 <li>min temp is <span id="min_temp"></span></li>
