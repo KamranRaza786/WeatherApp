@@ -37,14 +37,14 @@
               <li><a class="dropdown-item" href="#">Queta</a></li>
               <li><a class="dropdown-item" href="#">Pishawar</a></li>
               <li><a class="dropdown-item" href="#">Sakhar</a></li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Other City</a></li>
-            </ul>
+              <hr class="dropdown-divider">
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Follow for more App @ S.M Kamran Raza</a>
-          </li>
+          <li><a class="dropdown-item" href="#">Other City</a></li>
+        </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Follow for more App @ S.M Kamran Raza</a>
+        </li>
         </ul>
         <div class="d-flex" role="search">
           <input id="city1" class="form-control me-2" type="search" placeholder="Your City" aria-label="Search">
@@ -58,62 +58,79 @@
       Get the latest weather data for any region in the world.<br>This App provides the latest weather information for
       any city or geographic location.
     </p>
-    <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
     <main>
-      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Tempratures</h4>
+      <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h1 class="my-4 text-center"><span id="cityName"></span> , <span id="country"></span></h1>
+          <p>Latitude: <span id="lat"></span> , Longitude: <span id="lon"></span></p>
+          <h4>Weather is now " <span id="txt"></span> "</h4>
+        </div>
+        <div class="bg-body-tertiary shadow-sm mx-auto"
+          style="width: 100%; height: 300px; border-radius: 21px 21px 0 0;">
+          <img src="./img/688398-wind-gif-file-hd.gif" height="300" width="400" alt id="txt">
+        </div>
+        <p></p>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Tempratures</h4>
+              </div>
+              <div class="card-body">
+                <img src="./img/temp2.png" alt="">
+                <h1 class="card-title pricing-card-title" id="temp_main">27<small
+                    class="text-body-secondary fw-light"><sup>&deg;</sup>C</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Temprature <span id="temp"></span></li>
+                  <li>Min temp is <span id="min_temp"></span></li>
+                  <li>Max temp is <span id="max_temp"></span></li>
+                  <li>Update: <span id=""></span></li>
+                </ul>
+              </div>
             </div>
-            <div class="card-body">
-              <img src="./img/temp2.png" alt="">
-              <h1 class="card-title pricing-card-title" id="temp_main">27<small
-                class="text-body-secondary fw-light"><sup>&deg;</sup>C</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>City temp is <span id="temp"></span></li>
-                <li>min temp is <span id="min_temp"></span></li>
-                <li>max temp is <span id="max_temp"></span></li>
-              </ul>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Humidity</h4>
+              </div>
+              <div class="card-body">
+                <img src="./img/sun.jpg" alt="">
+                <h1 class="card-title pricing-card-title"> <span id="humidity"></span> <small class="text-body-secondary fw-light">%</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Cloud pct <span id="Cloud_pct"></span>%</li>
+                  <li>Feels like <span id="feelslike_c"></span><small
+                    class="text-body-secondary fw-light"><sup>&deg;</sup>C</small></li>
+                  <li>Feels like <span id="feelslike_f"></span><small
+                    class="text-body-secondary fw-light"><sup>&deg;</sup>F</small></li>
+                  <li>UV index is <span id="uv"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Wind info</h4>
+              </div>
+              <div class="card-body">
+                <img src="./img/wind2.jpg" alt="">
+                <h1 class="card-title pricing-card-title"><span id="wind_degree"></span><small class="text-body-secondary fw-light"><sup>&deg;</sup></small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Direction <span id="wind_dir"></span></li>
+                  <li>Pressure <span id="pressure_in"></span></li>
+                  <li>Speed <span id="wind_kph"></span> kph</li>
+                  <li>Wind degree is <span id="wind_degree"></span></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Humidity</h4>
-            </div>
-            <div class="card-body">
-              <img src="./img/sun.jpg" alt="">
-              <h1 class="card-title pricing-card-title">29 <small class="text-body-secondary fw-light">%</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>Cloud pct is <span id="Cloud_pct"></span></li>
-                <li>Feels like is <span id="feels_like"></span></li>
-                <li>Humidity is <span id="humidity"></span></li>
-                <li>Cloud pct is <span id="Cloud_pct"></span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm border-primary">
-            <div class="card-header py-3 text-bg-primary border-primary">
-              <h4 class="my-0 fw-normal">Wind info</h4>
-            </div>
-            <div class="card-body">
-              <img src="./img/wind2.jpg" alt="">
-              <h1 class="card-title pricing-card-title">42.0<small class="text-body-secondary fw-light">km/hr</small>
-              </h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>Sunrise is <span id="sunrise"></span></li>
-                <li>Sunset is <span id="sunset"></span></li>
-                <li>Wind speed is <span id="wind_speed"></span></li>
-                <li>Wind degrees is <span id="wind_degrees"></span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        Last update on : <span id="last_updated"></span>
+        <p></p>
       </div>
+      <p> </p>
 
       <h2 class="display-6 text-center mb-4">Compare from other cities</h2>
 
@@ -219,7 +236,8 @@
           </tbody>
         </table>
       </div>
-    </main>
+  </div>
+  </main>
 
   </div>
 
@@ -254,18 +272,30 @@
       </ul>
     </div>
     <div class="col-6 col-md">
-      <h5>Contribution</h5>
+      <h5>Languages and Tools:</h5>
       <ul class="list-unstyled text-small">
-        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">HTML5</a></li>
-        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">JS-es6</a></li>
-        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">JS Node</a></li>
-        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">CSS3</a></li>
+        <li class="mb-1"><a class="link-secondary text-decoration-none"
+            href="https://codepen.io/sunbun2461/pen/ePKywV">HTML5 & CSS3</a></li>
+        <li class="mb-1"><a class="link-secondary text-decoration-none" href="">VS Code & Flexbox</a></li>
+        <li class="mb-1"><a class="link-secondary text-decoration-none"
+            href="https://developer.mozilla.org/en-US/docs/Web/javascript">Java Script</a></li>
+        <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://nodejs.org/en/docs">Node.JS</a>
+        </li>
+        <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://axios-http.com/docs/intro">Axios &
+            JSON</a></li>
+        <li class="mb-1"><a class="link-secondary text-decoration-none"
+            href="https://262.ecma-international.org/6.0/">Ecma script 6</a></li>
+        <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://expressjs.com/">Express Server</a>
+        <li class="mb-1"><a class="link-secondary text-decoration-none"
+            href="https://devops.com/continuous-documentation/">Azure DevOps</a>
+
+        </li>
       </ul>
     </div>
     <div class="col-6 col-md">
       <h5>Popular Apps</h5>
       <ul class="list-unstyled text-small">
-        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Js Calculater</a></li>
+        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Simple Calculater</a></li>
         <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Smart Analyzer</a></li>
         <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Weather App</a></li>
         <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cirriculmn Vita</a></li>
