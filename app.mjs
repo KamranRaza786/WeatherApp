@@ -11,21 +11,22 @@ async function checkWeather(city) {
 	const weather_data = await fetch(`${url}`)
 		.then(Response => Response.json())
 		.then((data) => {
-			if (data.current.condition.code === 1006) {
+			if (data.current.condition.code === 1009) {
+				console.log(data);
+				temp.innerHTML = `${data.current.temp_c}`;
+				temp_main.innerHTML = `${data.current.temp_c} <small
+				class="text-body-secondary fw-light"><sup>&deg;</sup>C</small>`;
+				cityName.innerHTML = data.location.name
+			} else {
 				document.querySelector(".container").innerHTML = data.message
 			}
-			console.log(data);
-			temp.innerHTML = `${data.current.temp_c}`;
-			temp_main.innerHTML = `${data.current.temp_c} <small
-			class="text-body-secondary fw-light"><sup>&deg;</sup>C</small>`;
-			cityName.innerHTML = data.location.name
 
 		})
 
-city1.value=""
+	city1.value = ""
 
 }
-const  getWeatherData = async () => {
+const getWeatherData = async () => {
 	const key = "38a9ab72fa4044218e075627230807";
 	const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=karachi&aqi=no`;
 
