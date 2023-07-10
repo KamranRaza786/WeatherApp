@@ -1,7 +1,7 @@
 async function checkWeather(city) {
 	const city1 = document.getElementById("city1")
 	const key = "38a9ab72fa4044218e075627230807";
-	const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${city1.value}&days=10&aqi=no&alerts=yes`;
+	const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${city1.value}&days=3&aqi=no&alerts=no`;
 
 	const temp = document.querySelector("#temp");
 	const temp_main = document.querySelector("#temp_main");
@@ -28,7 +28,7 @@ async function checkWeather(city) {
 }
 const getWeatherData = async () => {
 	const key = "38a9ab72fa4044218e075627230807";
-	const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=islamabad&days=10&aqi=no&alerts=yes`;
+	const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=islamabad&days=3&aqi=no&alerts=no`;
 
 	//const img = document.querySelector("#img");
 	const txt = document.querySelector("#txt");
