@@ -83,11 +83,4 @@ async function checkWeather(city) {
   });
   
 
-function hello(parameter) { //parameter
-
-greeting (muzammil)  //argument
-greeting (ismail)
-greeting (afsheen)
-
-}
 
